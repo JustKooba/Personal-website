@@ -37,10 +37,10 @@ export default {
   },
   methods: {
     handleMenu() {
-      if ((this.menuConDisplay = "block")) {
-        this.menuConDisplay = "none";
-      } else if ((this.menuConDisplay = "none")) {
+      if (this.menuConDisplay == "none") {
         this.menuConDisplay = "block";
+      } else if (this.menuConDisplay == "block") {
+        this.menuConDisplay = "none";
       }
     },
   },
@@ -136,3 +136,4 @@ header {
   cursor: pointer;
 }
 </style>
+
