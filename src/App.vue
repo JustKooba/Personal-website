@@ -64,7 +64,7 @@
             focus is getting started with backend, I want to be a Full-stack
             developer someday!
           </p>
-          <p class="desc">If your curious, Here are things that I work with:</p>
+          <p class="desc">If you're curious, Here are things that I work with:</p>
           <ul class="tech">
             <li>HTML</li>
             <li>CSS</li>
