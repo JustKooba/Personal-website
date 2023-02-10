@@ -51,7 +51,7 @@
           <p class="green">01.</p>
           <h3>About Me</h3>
         </div>
-        <div class="about-">
+        <div class="about-desc">
           <p class="desc">
             Hello! My name is Jakub and I'm Learning Front-end development. i
             first started in 2021 When i decided to build a website using Html.
@@ -180,6 +180,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
+  margin-bottom: 150px;
 }
 
 .pfp {
@@ -244,7 +245,7 @@ header {
   align-items: center;
   border-bottom: 1px solid #ccd6f6;
   position: relative;
-  top: 200px;
+  top: 300px;
 }
 
 .about-header .green {
@@ -255,6 +256,12 @@ header {
 h3 {
   margin-bottom: 15px;
 }
+
+.about-desc {
+  position: relative;
+  top: 300px;
+}
 </style>
+
 
 
