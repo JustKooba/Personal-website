@@ -4,10 +4,31 @@
     <div class="expanded-menu">
       <img src="./assets/menu.svg" class="menu" @click="handleMenu" />
       <div class="menu-content" :style="{ display: menuConDisplay }">
-        <li><p class="menu-p">Home</p></li>
-        <li><p class="menu-p">About Me</p></li>
-        <li><p class="menu-p">Portfolio</p></li>
-        <li><p class="menu-p">Skills</p></li>
+        <img
+          src="./assets/menu-close.svg"
+          @click="handleMenu"
+          class="menu close"
+        />
+        <li>
+          <p class="green">01.</p>
+
+          <p class="menu-p">About Me</p>
+        </li>
+        <li>
+          <p class="green">02.</p>
+
+          <p class="menu-p">Skills</p>
+        </li>
+        <li>
+          <p class="green">03.</p>
+
+          <p class="menu-p">Portfolio</p>
+        </li>
+        <li>
+          <p class="green">04.</p>
+
+          <p class="menu-p">Contact</p>
+        </li>
       </div>
     </div>
   </header>
@@ -24,6 +45,8 @@
         </p>
       </div>
       <button class="check">Check Out My Projects!</button>
+
+      <div class="about"></div>
     </div>
   </main>
 </template>
@@ -62,7 +85,6 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: #0a192f;
   height: 100vh;
-  overflow: hidden;
 }
 .container {
   height: 100vh;
@@ -104,6 +126,10 @@ h2 {
   opacity: 0.5;
 }
 
+li {
+  list-style: none;
+}
+
 h1 {
   color: #ccd6f6;
   font-size: 46px;
@@ -135,5 +161,52 @@ header {
   height: 55px;
   cursor: pointer;
 }
+
+.expanded-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: #112240;
+  min-width: 65vw;
+  min-height: 100vh;
+  left: 153%;
+  transform: translateX(-100%);
+  top: -15px;
+  z-index: 1;
+}
+
+.menu-content li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.green {
+  color: #08d698;
+  font-family: "Roboto Mono", sans-serif;
+  margin-bottom: 5px;
+}
+
+.close {
+  position: relative;
+  left: 77%;
+  top: 10px;
+}
+
+.menu-p {
+  color: #ccd6f6;
+  cursor: pointer;
+}
+
+.menu-p:hover {
+  color: #08d698;
+  transition: ease-in-out 0.3s;
+}
 </style>
+
 
