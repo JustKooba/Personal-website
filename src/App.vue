@@ -17,7 +17,7 @@
         <li>
           <p class="green">02.</p>
 
-          <p class="menu-p">Skills</p>
+          <p class="menu-p">Work</p>
         </li>
         <li>
           <p class="green">03.</p>
@@ -46,7 +46,33 @@
       </div>
       <button class="check">Check Out My Projects!</button>
 
-      <div class="about"></div>
+      <div class="about">
+        <div class="about-header">
+          <p class="green">01.</p>
+          <h3>About Me</h3>
+        </div>
+        <div class="about-">
+          <p class="desc">
+            Hello! My name is Jakub and I'm Learning Front-end development. i
+            first started in 2021 When i decided to build a website using Html.
+            I got really interested as i got further so i started learning more
+            and more.
+          </p>
+          <p class="desc">
+            Fast forwarding to this day - I'm currently working on improving my
+            skills, by building projects for example from FronetndMentor My Main
+            focus is getting started with backend, I want to be a Full-stack
+            developer someday!
+          </p>
+          <p class="desc">If your curious, Here are things that I work with:</p>
+          <ul class="tech">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Vue.js</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -98,6 +124,10 @@ h2 {
   font-family: "Roboto Mono", sans-serif;
   color: #08d698;
   margin-bottom: 25px;
+}
+
+h3 {
+  color: #ccd6f6;
 }
 
 .websites {
@@ -206,6 +236,24 @@ header {
 .menu-p:hover {
   color: #08d698;
   transition: ease-in-out 0.3s;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #ccd6f6;
+  position: relative;
+  top: 200px;
+}
+
+.about-header .green {
+  margin-bottom: 0;
+}
+
+.about-header .green,
+h3 {
+  margin-bottom: 15px;
 }
 </style>
 
