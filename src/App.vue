@@ -10,22 +10,22 @@
           class="menu close"
         />
         <li>
-          <p class="green">01.</p>
+          <p class="green">01</p>
 
-          <p class="menu-p">About Me</p>
+          <p class="menu-p" @click="scrollToAbout">About Me</p>
         </li>
         <li>
-          <p class="green">02.</p>
+          <p class="green">02</p>
 
           <p class="menu-p">Work</p>
         </li>
         <li>
-          <p class="green">03.</p>
+          <p class="green">03</p>
 
           <p class="menu-p">Portfolio</p>
         </li>
         <li>
-          <p class="green">04.</p>
+          <p class="green">04</p>
 
           <p class="menu-p">Contact</p>
         </li>
@@ -46,7 +46,7 @@
       </div>
       <button class="check">Check Out My Projects!</button>
 
-      <div class="about">
+      <div class="about" ref="about">
         <div class="about-header">
           <p class="green">01.</p>
           <h3>About Me</h3>
@@ -64,7 +64,9 @@
             focus is getting started with backend, I want to be a Full-stack
             developer someday!
           </p>
-          <p class="desc">If you're curious, Here are things that I work with:</p>
+          <p class="desc">
+            If you're curious, Here are things that I work with:
+          </p>
           <ul class="tech">
             <li>HTML</li>
             <li>CSS</li>
@@ -92,6 +94,25 @@ export default {
         this.menuConDisplay = "none";
       }
     },
+    scrollToAbout() {
+      const about = this.$refs.about;
+      this.menuConDisplay = "none";
+      window.scrollTo({
+        top: about.offsetTop,
+        behavior: "smooth",
+      });
+    },
+    closeMenuOnScroll() {
+      if (window.scrollY > 0) {
+        this.menuConDisplay = "none";
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.closeMenuOnScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener("scroll", this.closeMenuOnScroll);
   },
 };
 </script>
@@ -189,7 +210,7 @@ header {
 }
 
 .menu {
-  height: 55px;
+  height: 45px;
   cursor: pointer;
 }
 
@@ -259,9 +280,34 @@ h3 {
 
 .about-desc {
   position: relative;
-  top: 300px;
+  top: 330px;
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  color: #ccd6f6;
+  margin-top: -30px;
+}
+
+.tech li {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+.tech li::before {
+  content: "";
+  border-color: transparent #08d698;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: block;
+  height: 0;
+  width: 0;
+  top: 0.9em;
+  position: relative;
 }
 </style>
-
 
 
