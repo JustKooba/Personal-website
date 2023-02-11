@@ -17,7 +17,7 @@
         <li>
           <p class="green">02</p>
 
-          <p class="menu-p">Work</p>
+          <p class="menu-p" @click="scrollToWork">Work</p>
         </li>
         <li>
           <p class="green">03</p>
@@ -75,6 +75,34 @@
           </ul>
         </div>
       </div>
+      <div class="work" ref="work">
+        <div class="work-header">
+          <p class="green">02.</p>
+          <h3>Work</h3>
+        </div>
+        <div class="work-desc">
+          <p class="desc">Currently Unemployed, this page will be updated!</p>
+        </div>
+      </div>
+      <div class="portfolio">
+        <div class="portfolio-header">
+          <p class="green">03.</p>
+          <h3>portfolio</h3>
+        </div>
+        <div class="portfolio-desc">
+          <p class="desc">
+            most of my projects are from
+            <a href="https://www.frontendmentor.io/challenges">FronetndMentor</a
+            >, Here are some things I've build:
+          </p>
+          <div class="project-one">
+            <a href="https://charming-snickerdoodle-41f457.netlify.app/">
+              <h4>Tip Calculator App</h4>
+            </a>
+            <img src="./assets/image.png" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -102,10 +130,19 @@ export default {
         behavior: "smooth",
       });
     },
+
     closeMenuOnScroll() {
       if (window.scrollY > 0) {
         this.menuConDisplay = "none";
       }
+    },
+    scrollToWork() {
+      const work = this.$refs.work;
+      this.menuConDisplay = "none";
+      window.scrollTo({
+        top: work.offsetTop,
+        behavior: "smooth",
+      });
     },
   },
   mounted() {
@@ -201,7 +238,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  margin-bottom: 150px;
+  margin-bottom: 450px;
 }
 
 .pfp {
@@ -212,6 +249,11 @@ header {
 .menu {
   height: 45px;
   cursor: pointer;
+}
+
+a {
+  color: #08d698;
+  text-decoration: none;
 }
 
 .expanded-menu {
@@ -260,7 +302,9 @@ header {
   transition: ease-in-out 0.3s;
 }
 
-.about-header {
+.about-header,
+.work-header,
+.portfolio-header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -269,18 +313,40 @@ header {
   top: 300px;
 }
 
-.about-header .green {
+.about-header .green,
+.work-header {
   margin-bottom: 0;
 }
 
 .about-header .green,
-h3 {
+.work-header .green,
+.portfolio-header .green h3 {
   margin-bottom: 15px;
 }
 
 .about-desc {
   position: relative;
   top: 330px;
+}
+
+.work-desc {
+  position: relative;
+  top: 380px;
+}
+
+.portfolio-desc {
+  position: relative;
+  top: 370px;
+}
+
+h4 {
+  color: #ccd6f6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h4:hover {
+  color: #08d698;
 }
 
 .tech {
@@ -308,6 +374,17 @@ h3 {
   top: 0.9em;
   position: relative;
 }
-</style>
 
+.work-header {
+  display: flex;
+  position: relative;
+  top: 370px;
+}
+
+.portfolio-header {
+  display: flex;
+  position: relative;
+  top: 360px;
+}
+</style>
 
