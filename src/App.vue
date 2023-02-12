@@ -9,6 +9,7 @@
           @click="handleMenu"
           class="menu close"
         />
+
         <li>
           <p class="green">01</p>
 
@@ -30,6 +31,20 @@
           <p class="menu-p" @click="scrollToContact">Contact</p>
         </li>
       </div>
+    </div>
+    <div class="pc-menu">
+      <li>
+        <p class="menu-p" @click="scrollToAbout">About Me</p>
+      </li>
+      <li>
+        <p class="menu-p" @click="scrollToWork">Work</p>
+      </li>
+      <li>
+        <p class="menu-p" @click="scrollToPortfolio">Portfolio</p>
+      </li>
+      <li>
+        <p class="menu-p" @click="scrollToContact">Contact</p>
+      </li>
     </div>
   </header>
   <main>
@@ -228,6 +243,10 @@ body {
 
 .bottom-section {
   padding: 30px;
+}
+
+.pc-menu {
+  display: none;
 }
 
 h2 {
@@ -438,6 +457,15 @@ h4:hover {
   margin-top: 30px;
 }
 
+.project-three img,
+.project-two img,
+.project-one img {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
 .contact li {
   color: #ccd6f6;
   display: flex;
@@ -457,5 +485,99 @@ h4:hover {
 .footer a {
   margin-left: 5px;
 }
-</style>
 
+@media (min-width: 767px) {
+  .bottom-section {
+    padding: 10vw;
+  }
+
+  .container {
+    padding: 5vw;
+  }
+
+  .bottom-section {
+    text-align: center;
+    padding: 25vw;
+    font-size: 25px;
+  }
+
+  .bottom-section .green {
+    font-size: 25px;
+  }
+
+  .bottom-section img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .about-header,
+  .work-header,
+  .portfolio-header,
+  .contact-header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+  .about-header {
+    margin-top: -100px;
+  }
+  .menu-content {
+    min-width: 25vw;
+  }
+
+  .container h2 {
+    font-size: 30px;
+  }
+
+  .container h1 {
+    font-size: 70px;
+  }
+
+  .menu-content {
+    display: flex;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .pc-menu {
+    display: flex;
+  }
+  .pc-menu li {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bottom-section {
+    padding: 30vw;
+  }
+
+  .container {
+    padding: 20vw;
+  }
+
+  .container h2 {
+    font-size: 30px;
+  }
+
+  .container h1 {
+    font-size: 70px;
+  }
+
+  header {
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+
+  .about-header {
+    margin-top: -300px;
+  }
+}
+</style>
