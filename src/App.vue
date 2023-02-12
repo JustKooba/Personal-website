@@ -22,12 +22,12 @@
         <li>
           <p class="green">03</p>
 
-          <p class="menu-p">Portfolio</p>
+          <p class="menu-p" @click="scrollToPortfolio">Portfolio</p>
         </li>
         <li>
           <p class="green">04</p>
 
-          <p class="menu-p">Contact</p>
+          <p class="menu-p" @click="scrollToContact">Contact</p>
         </li>
       </div>
     </div>
@@ -45,7 +45,8 @@
         </p>
       </div>
       <button class="check">Check Out My Projects!</button>
-
+    </div>
+    <div class="bottom-section">
       <div class="about" ref="about">
         <div class="about-header">
           <p class="green">01.</p>
@@ -84,7 +85,7 @@
           <p class="desc">Currently Unemployed, this page will be updated!</p>
         </div>
       </div>
-      <div class="portfolio">
+      <div class="portfolio" ref="portfolio">
         <div class="portfolio-header">
           <p class="green">03.</p>
           <h3>portfolio</h3>
@@ -99,10 +100,39 @@
             <a href="https://charming-snickerdoodle-41f457.netlify.app/">
               <h4>Tip Calculator App</h4>
             </a>
-            <img src="./assets/image.png" alt="" />
+            <img src="./assets/image.png" />
+          </div>
+          <div class="project-two">
+            <a href="https://celebrated-malasada-d91691.netlify.app/"
+              ><h4>Advice Generator App</h4></a
+            >
+            <img src="./assets/image2.png" />
+          </div>
+          <div class="project-three">
+            <a href="https://monumental-melba-18241f.netlify.app/"
+              ><h4>Time tracker dashboard</h4></a
+            >
+            <img src="./assets/image3.png" />
           </div>
         </div>
       </div>
+      <div class="contact" ref="contact">
+        <div class="contact-header">
+          <p class="green">04.</p>
+          <h3>Contact</h3>
+        </div>
+        <p class="desc">
+          Want to get in touch? Just message me on one of those platforms:
+        </p>
+        <ul class="contact-ul">
+          <li>Discord: JustKooba#2707</li>
+          <li>GMail: justkooba@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      Built by justkooba, inspired by
+      <a href="https://brittanychiang.com/#contact"> Brittany Chiang</a>
     </div>
   </main>
 </template>
@@ -144,6 +174,22 @@ export default {
         behavior: "smooth",
       });
     },
+    scrollToPortfolio() {
+      const portfolio = this.$refs.portfolio;
+      this.menuConDisplay = "none";
+      window.scrollTo({
+        top: portfolio.offsetTop,
+        behavior: "smooth",
+      });
+    },
+    scrollToContact() {
+      const contact = this.$refs.contact;
+      this.menuConDisplay = "none";
+      window.scrollTo({
+        top: contact.offsetTop,
+        behavior: "smooth",
+      });
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.closeMenuOnScroll);
@@ -176,6 +222,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.bottom-section {
+  padding: 30px;
 }
 
 h2 {
@@ -238,7 +288,6 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
-  margin-bottom: 450px;
 }
 
 .pfp {
@@ -302,41 +351,36 @@ a {
   transition: ease-in-out 0.3s;
 }
 
+.about-header {
+  margin-top: 500px;
+}
+
 .about-header,
 .work-header,
-.portfolio-header {
+.portfolio-header,
+.contact-header {
   display: flex;
   flex-direction: row;
   align-items: center;
   border-bottom: 1px solid #ccd6f6;
-  position: relative;
-  top: 300px;
+  margin-bottom: 20px;
 }
 
 .about-header .green,
-.work-header {
+.work-header,
+.contact-header .green {
   margin-bottom: 0;
 }
 
 .about-header .green,
 .work-header .green,
-.portfolio-header .green h3 {
-  margin-bottom: 15px;
-}
-
-.about-desc {
-  position: relative;
-  top: 330px;
+.portfolio-header .green,
+.contact-header .green h3 {
+  margin-bottom: 5px;
 }
 
 .work-desc {
-  position: relative;
-  top: 380px;
-}
-
-.portfolio-desc {
-  position: relative;
-  top: 370px;
+  margin-top: 20px;
 }
 
 h4 {
@@ -356,6 +400,7 @@ h4:hover {
   text-align: center;
   color: #ccd6f6;
   margin-top: -30px;
+  margin-bottom: 30px;
 }
 
 .tech li {
@@ -377,14 +422,39 @@ h4:hover {
 
 .work-header {
   display: flex;
-  position: relative;
-  top: 370px;
 }
 
 .portfolio-header {
   display: flex;
-  position: relative;
-  top: 360px;
+}
+
+.project-two {
+  margin-top: 30px;
+}
+
+.project-three {
+  margin-top: 30px;
+}
+
+.contact li {
+  color: #ccd6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  color: #ccd6f6;
+}
+
+.footer a {
+  margin-left: 5px;
 }
 </style>
+
 
