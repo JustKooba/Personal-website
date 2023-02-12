@@ -48,15 +48,18 @@
     </div>
   </header>
   <main>
+    <div class="rotated-email">
+      <p class="email" @click="scrollToContact">justkooba@gmail.com</p>
+    </div>
     <div class="container">
       <div class="text">
         <h2>Hi, my name is</h2>
         <h1>Jakub "JustKooba".</h1>
         <h2 class="websites">I build websites.</h2>
         <p>
-          I'm a frontend developer who is good in building responsive websites.
-          Currently I'm working on improving my frontend skills and learning new
-          things.
+          I'm a frontend developer who is interested in building responsive
+          websites. Currently I'm working on improving my frontend skills and
+          learning new things.
         </p>
       </div>
       <a href="https://github.com/JustKooba?tab=repositories">
@@ -71,9 +74,9 @@
         </div>
         <div class="about-desc">
           <p class="desc">
-            Hello! My name is Jakub and I'm Learning Front-end development. i
-            first started in 2021 When i decided to build a website using Html.
-            I got really interested as i got further so i started learning more
+            Hello! My name is Jakub and I'm Learning Front-end development. I
+            first started in 2021 When I decided to build a website using Html.
+            I got really interested as I got further so I started learning more
             and more.
           </p>
           <p class="desc">
@@ -83,7 +86,7 @@
             developer someday!
           </p>
           <p class="desc">
-            If you're curious, Here are things that I work with:
+            If You're curious, Here are things that I work with:
           </p>
           <ul class="tech">
             <li>HTML</li>
@@ -109,7 +112,7 @@
         </div>
         <div class="portfolio-desc">
           <p class="desc">
-            most of my projects are from
+            Most of my projects are from
             <a href="https://www.frontendmentor.io/challenges">FronetndMentor</a
             >, Here are some things I've build:
           </p>
@@ -117,18 +120,31 @@
             <a href="https://charming-snickerdoodle-41f457.netlify.app/">
               <h4>Tip Calculator App</h4>
             </a>
+            <p>
+              This project was build entirely using Vanilla JavaScript, As the
+              name suggests - it calculates the tip based of the ammount of
+              money and people you've put in.
+            </p>
             <img src="./assets/image.png" />
           </div>
           <div class="project-two">
             <a href="https://celebrated-malasada-d91691.netlify.app/"
               ><h4>Advice Generator App</h4></a
             >
+            <p>
+              API - based project made with vanilla JavaScript. It generates a
+              piece of advice each time you press the button.
+            </p>
             <img src="./assets/image2.png" />
           </div>
           <div class="project-three">
             <a href="https://monumental-melba-18241f.netlify.app/"
               ><h4>Time tracker dashboard</h4></a
             >
+            <p>
+              Project which was also made in vanilla JavaScript. I've used a
+              JSON file to store all the data for this project.
+            </p>
             <img src="./assets/image3.png" />
           </div>
         </div>
@@ -243,6 +259,7 @@ body {
 
 .bottom-section {
   padding: 30px;
+  text-align: center;
 }
 
 .pc-menu {
@@ -373,7 +390,7 @@ a {
 }
 
 .about-header {
-  margin-top: 500px;
+  margin-top: 150px;
 }
 
 .about-header,
@@ -455,6 +472,22 @@ h4:hover {
 
 .project-three {
   margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.project-one,
+.project-two,
+.project-three {
+  background-color: #112240;
+  padding: 25px;
+  text-align: center;
+}
+
+.project-one:hover,
+.project-two:hover,
+.project-three:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
 }
 
 .project-three img,
@@ -474,12 +507,26 @@ h4:hover {
   align-items: center;
 }
 
+.contact ul {
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+.contact {
+  margin-bottom: -20px;
+}
+
 .footer {
   display: flex;
   justify-content: center;
   align-content: center;
   text-align: center;
   color: #ccd6f6;
+  padding-bottom: 30px;
+}
+
+.rotated-email {
+  display: none;
 }
 
 .footer a {
@@ -488,7 +535,56 @@ h4:hover {
 
 @media (min-width: 767px) {
   .bottom-section {
-    padding: 10vw;
+    padding: 5vw;
+  }
+
+  .rotated-email {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 100px;
+    width: 100vh;
+    height: 100px;
+    transform: rotate(90deg);
+    transform-origin: bottom right;
+    overflow-y: hidden;
+  }
+
+  .email {
+    display: block;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+    position: absolute;
+    bottom: 1%;
+    right: 50px;
+    writing-mode: vertical-rl;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  .email::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 45px;
+    background-color: #5c647a;
+    position: absolute;
+    bottom: -45px;
+    right: 33px;
+    cursor: pointer;
+  }
+
+  .email:hover {
+    color: #08d698;
+  }
+
+  .email:hover::before {
+    background-color: #08d698;
+  }
+
+  header {
+    margin-bottom: -100px;
   }
 
   .container {
@@ -497,7 +593,7 @@ h4:hover {
 
   .bottom-section {
     text-align: center;
-    padding: 25vw;
+    padding: 20vw;
     font-size: 25px;
   }
 
@@ -551,6 +647,7 @@ h4:hover {
   }
   .pc-menu li {
     padding: 10px;
+    flex-direction: row;
   }
 }
 
@@ -559,8 +656,12 @@ h4:hover {
     padding: 30vw;
   }
 
+  header {
+    margin-bottom: -150px;
+  }
+
   .container {
-    padding: 20vw;
+    padding: 15vw;
   }
 
   .container h2 {
@@ -569,11 +670,6 @@ h4:hover {
 
   .container h1 {
     font-size: 70px;
-  }
-
-  header {
-    padding-left: 20vw;
-    padding-right: 20vw;
   }
 
   .about-header {
