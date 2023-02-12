@@ -44,7 +44,9 @@
           things.
         </p>
       </div>
-      <button class="check">Check Out My Projects!</button>
+      <a href="https://github.com/JustKooba?tab=repositories">
+        <button class="check">Check Out My Projects!</button></a
+      >
     </div>
     <div class="bottom-section">
       <div class="about" ref="about">
@@ -247,7 +249,7 @@ h3 {
 
 .check {
   border: #08d698 2px solid;
-  padding: 20px 25px;
+  padding: 20px 55px;
   background-color: transparent;
   color: #08d698;
   margin-top: 30px;
@@ -456,5 +458,4 @@ h4:hover {
   margin-left: 5px;
 }
 </style>
-
 
