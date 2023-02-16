@@ -676,4 +676,10 @@ h4:hover {
     margin-top: -300px;
   }
 }
+
+@media (max-height: 700px) {
+  header {
+    margin-bottom: 50px;
+  }
+}
 </style>
