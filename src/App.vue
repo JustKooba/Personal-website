@@ -74,19 +74,19 @@
         </div>
         <div class="about-desc">
           <p class="desc">
-            Hello! My name is Jakub and I'm Learning Front-end development. I
-            first started in 2021 When I decided to build a website using Html.
-            I got really interested as I got further so I started learning more
+            Hello! My name is Jakub and I'm learning front-end development. I
+            first started in 2021 when I decided to build a website using HTML.
+            I got really interested as I progressed, so I started learning more
             and more.
           </p>
           <p class="desc">
-            Fast forwarding to this day - I'm currently working on improving my
-            skills, by building projects for example from FronetndMentor My Main
-            focus is getting started with backend, I want to be a Full-stack
-            developer someday!
+            Fast forwarding to today - I'm currently working on improving my
+            skills by building projects, for example from Frontend Mentor. My
+            main focus is getting started with backend development because I
+            want to become a full-stack developer someday!
           </p>
           <p class="desc">
-            If You're curious, Here are things that I work with:
+            If you're curious, here are the things I work with:
           </p>
           <ul class="tech">
             <li>HTML</li>
@@ -113,7 +113,7 @@
         <div class="portfolio-desc">
           <p class="desc">
             Most of my projects are from
-            <a href="https://www.frontendmentor.io/challenges">FronetndMentor</a
+            <a href="https://www.frontendmentor.io/challenges">FrontendMentor</a
             >, Here are some things I've build:
           </p>
           <div class="project-one">
