@@ -179,9 +179,9 @@ export default {
   },
   methods: {
     handleMenu() {
-      if (this.menuConDisplay == "none") {
+      if (this.menuConDisplay === "none") {
         this.menuConDisplay = "block";
-      } else if (this.menuConDisplay == "block") {
+      } else if (this.menuConDisplay === "block") {
         this.menuConDisplay = "none";
       }
     },
@@ -235,7 +235,6 @@ export default {
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:wght@700&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200&family=Roboto:wght@700&display=swap");
 
 * {
